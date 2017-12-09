@@ -1,0 +1,36 @@
+<h1>LISTAR</h1>
+
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <ba-card title="Responsive Table">
+        <div>
+          <table class="table table-bordered">
+            <thead>
+              <th>Periodos</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miercoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sabado</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let periodo of periodos">
+               <td>{{periodo}}</td>
+               <td [attr.id]="'1-' + periodo" [ngClass]="{'marca-periodo': (getEstadoBloque('1-' + periodo)), 'no-marca-periodo': !getEstadoBloque('1-' + periodo)}" (click)="changeEstadoBloque('1-' + periodo)"></td>
+               <td [attr.id]="'2-' + periodo" [ngClass]="{'marca-periodo': (getEstadoBloque('2-' + periodo)), 'no-marca-periodo': !getEstadoBloque('2-' + periodo)}" (click)="changeEstadoBloque('2-' + periodo)"></td>
+               <td [attr.id]="'3-' + periodo" [ngClass]="{'marca-periodo': (getEstadoBloque('3-' + periodo)), 'no-marca-periodo': !getEstadoBloque('3-' + periodo)}" (click)="changeEstadoBloque('3-' + periodo)"></td>
+               <td [attr.id]="'4-' + periodo" [ngClass]="{'marca-periodo': (getEstadoBloque('4-' + periodo)), 'no-marca-periodo': !getEstadoBloque('4-' + periodo)}" (click)="changeEstadoBloque('4-' + periodo)"></td>
+               <td [attr.id]="'5-' + periodo" [ngClass]="{'marca-periodo': (getEstadoBloque('5-' + periodo)), 'no-marca-periodo': !getEstadoBloque('5-' + periodo)}" (click)="changeEstadoBloque('5-' + periodo)"></td>
+               <td [attr.id]="'6-' + periodo" [ngClass]="{'marca-periodo': (getEstadoBloque('6-' + periodo)), 'no-marca-periodo': !getEstadoBloque('6-' + periodo)}" (click)="changeEstadoBloque('6-' + periodo)"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+version: "2"
+
+networks:
+  distribuida:
+    external:
+      name: paralela_distribuida
+
+services:
+  presentacion:
+    build: .
+    ports:
+      - "9090:80"

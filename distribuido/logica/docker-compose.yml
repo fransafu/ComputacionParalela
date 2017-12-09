@@ -1,0 +1,20 @@
+version: '3'
+volumes:
+  bundle:
+networks:
+  distribuida:
+    external:
+      name: paralela_distribuida
+services:
+  web_rails:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/myapp
+      - bundle:/usr/local/bundle
+    ports:
+      - "3030:3000"
+    networks:
+      - distribuida
+
+#docker network create paralela_distribuida

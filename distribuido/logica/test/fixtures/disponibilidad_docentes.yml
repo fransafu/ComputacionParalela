@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  docente_id: 1
+  periodo_id: 1
+  dia: MyString
+
+two:
+  docente_id: 1
+  periodo_id: 1
+  dia: MyString

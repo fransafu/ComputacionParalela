@@ -1,0 +1,106 @@
+<h1>Disponibilidad</h1>
+
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <ba-card title="Lista de profesores" baCardClass="with-scroll table-panel">
+        <div class="vertical-scroll">
+          <table class="table">
+            <tr>
+              <th>Rut</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>NN</th>
+              <th>NN</th>
+            </tr>
+            <tr *ngFor="let profesor of profesores">
+              <td>{{ profesor.rut }}</td>
+              <td>{{ profesor.nombres }}</td>
+              <td>{{ profesor.apellidos }}</td>
+              <td>{{ profesor.departamento.facultad.sigla }}</td>
+              <td>{{ profesor.departamento.facultad.nombre }}</td>
+              <td>
+                <div class="button-wrapper">
+                  <button type="button" (click)="disponibilidad( profesor.nombres, profesor.apellidos, profesor.bloques_libres, profesor.rut, profesor.id )" class="btn btn-primary">Disponibilidad</button>
+                  <button type="button" (click)="mostrarHorarioDocente( profesor.rut )" class="btn btn-primary">Horario</button>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ba-card>
+    </div>
+  </div> 
+</div>
+<button type="button" (click)="ejecutar()" class="btn btn-primary">Ejecutar programa</button>
+
+<div class="widgets" *ngIf="mostrarHorario; then Profesor else noProfesor"></div>
+
+<ng-template #Profesor>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <ba-card title="Disponibilidad profesor: {{ profeActual }}">
+        <div>
+          <table class="table table-bordered">
+            <thead>
+              <th>Periodos</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miercoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sabado</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of things; let i = index">
+                <td [attr.id]="i + '-' + j" *ngFor="let col of row; let j = index" (click)="getEstadoBloque(i + '-' + j)" >{{col}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ba-card>
+    </div>
+    <div class="col-lg-12 col-md-12">
+      <button type="button" (click)="generarObjDisponibilidad()" class="btn btn-primary">Guardar Disponibilidad</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noProfesor>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <ba-card title="Horario profesor">
+        <div>
+          <table class="table table-bordered">
+            <thead>
+              <th>Periodos</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miercoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sabado</th>
+            </thead>
+            <tbody>
+            <!--
+              <tr *ngFor="let periodo of periodos">
+               <td>{{ periodo.numero }}</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+              </tr>
+            -->
+              <tr *ngFor="let row of horarioProfesorMatriz; let i = index">
+                <td [attr.id]="i + '-' + j" *ngFor="let col of row; let j = index">{{col}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+</ng-template>

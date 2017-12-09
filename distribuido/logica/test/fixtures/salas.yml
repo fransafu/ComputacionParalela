@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  capacida: 1
+  latitud: 
+  longitud: 
+  nombre: MyString
+  sigla: MyString
+  tipo: MyString
+
+two:
+  capacida: 1
+  latitud: 
+  longitud: 
+  nombre: MyString
+  sigla: MyString
+  tipo: MyString

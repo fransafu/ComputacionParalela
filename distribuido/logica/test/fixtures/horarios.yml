@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dia: MyString
+  codigo_curso: 1
+  curso_asignatura: MyString
+  nombre_asignatura: MyString
+  periodo_id: 1
+
+two:
+  dia: MyString
+  codigo_curso: 1
+  curso_asignatura: MyString
+  nombre_asignatura: MyString
+  periodo_id: 1

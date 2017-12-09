@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  disponibilidad_sala_id: 1
+  horario_id: 1
+
+two:
+  disponibilidad_sala_id: 1
+  horario_id: 1

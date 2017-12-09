@@ -1,0 +1,2 @@
+class AccesoParalelo < ApplicationRecord
+end

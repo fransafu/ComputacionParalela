@@ -1,0 +1,15 @@
+<form>
+  <div class="form-group">
+    <label for="input01">Nombre</label>
+    <input type="text" class="form-control" name="nombreSala" [(ngModel)]=nombreSala id="nombreSala" placeholder="Nombre Sala">
+  </div>
+  <div class="form-group">
+    <label for="input01">Cantidad</label>
+    <input type="text" class="form-control" name="capacidadSala" [(ngModel)]=capacidadSala id="capacidadSala" placeholder="Capacidad Sala">
+  </div>
+  <div class="form-group">
+    <label for="input01">Tipo</label>
+    <input type="text" class="form-control" name="tipoSala" [(ngModel)]=tipoSala id="tipoSala" placeholder="Tipo Sala">
+  </div>
+  <button (click)="enviarSala()" type="submit" class="btn btn-primary" >Ingresar Sala</button>
+</form>
